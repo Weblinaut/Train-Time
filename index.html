@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Tracker</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Orbitron|Roboto+Mono|VT323" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="assets/javascript/app.js"></script>
+</head>
+
+<body>
+
+    <header><img class="responsive" src="assets/images/TrainTracker_Logo-02.png"></header>
+    <div id="clock">loading current time... </div>
+    
+    <div class=flexContainer>
+    <div class='row'>
+
+        <!-- Train Schedule -->
+
+        <h4>Current Train Schedule</h4>
+
+                <table id='trains'>
+                    <thead>
+                        <tr>
+                            <th>Train Name</th>
+                            <th>Destination</th>
+                            <th>Frequency (min)</th>
+                            <th>Next Arrival</th>
+                            <th>Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+                <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                    <div class="modalContent"> 
+                        <p class="message"></p>
+                        <p class="close">&times;</p>
+                    </div>
+                      
+                </div>
+
+        <!-- User Unput -->
+        
+        <h4>Track A Train</h4>
+
+                <form>
+                    <div class="formRow">
+                        <label for="">Enter Your Train Name</label>
+                        <input type="text" id="trainName">
+                    </div>
+
+                    <div class="formRow">
+                        <label for="">Destination</label>
+                        <input type="text" id="destination">
+                    </div>
+
+                    <div class="formRow">
+                        <div class="leftBlock">
+                            <label class='active' for="">First Train Departs <br>(HH:mm Military Time)</label>
+                            <input type="time" id="firstTrain" value="00:00">
+                        </div>
+
+                        <div class="rightBlock">
+                            <label for="">Subsequent Departures <br>(Frequency in minutes)</label>
+                            <input type="number" id="frequency">
+                        </div>
+                    </div>     
+
+                    <div class="buttonRow">
+                        <button type="submit" id="addTrain">Track It</button>   
+                    </div>
+
+                </form>
+           
+        </div>
+        </div>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+   
+</body>
+</html>
